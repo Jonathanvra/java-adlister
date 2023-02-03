@@ -23,11 +23,15 @@
 <%--     response.sendRedirect(redirectUrl);--%>
 <%--}--%>
 <%--  %>--%>
+
 <form action="login" method="post">
+<%--  Username  --%>
     <label for="username">Username:</label>
     <input type="text" placeholder="Username" name="Username" id="username" required>
+<%--  Password  --%>
     <label for="password">Password:</label>
     <input type="password" placeholder="Password" name="Password" id="password" required>
+<%--  Log In Button  --%>
     <button type="submit">Log In</button>
 </form>
 </body>
