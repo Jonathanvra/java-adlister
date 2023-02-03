@@ -12,16 +12,22 @@
 </head>
 <body>
 <%
-    if(Objects.equals(request.getParameter("username"), "admin") && Objects.equals(request.getParameter("password"), "password")) {
+    if(request.getMethod().equalsIgnoreCase("post") && Objects.equals(request.getParameter("username"), "admin") && Objects.equals(request.getParameter("password"), "password")) {
         String redirectUrl = "/profile.jsp";
         response.sendRedirect(redirectUrl);
     }
 %>
+<%--<%--%>
+<%--  if(Objects.equals(request.getParameter("username"), "admin") && Objects.equals(request.getParameter("password"), "password")) {--%>
+<%--     String redirectUrl = "/profile.jsp";--%>
+<%--     response.sendRedirect(redirectUrl);--%>
+<%--}--%>
+<%--  %>--%>
 <form action="login" method="post">
     <label for="username">Username:</label>
-    <input type="text" placeholder="Username" name="Username" id="username">
+    <input type="text" placeholder="Username" name="Username" id="username" required>
     <label for="password">Password:</label>
-    <input type="text" placeholder="Password" name="Password" id="password">
+    <input type="password" placeholder="Password" name="Password" id="password" required>
     <button type="submit">Log In</button>
 </form>
 </body>
